@@ -43,17 +43,17 @@ class _PersonalState extends State<Empresa> {
               ),
               _crearTipoDireccion(),
               _crearDireccion(),
-              _crearActualizarD(),
+              _crearActualizar(),
               Divider(
                 color: Colors.indigo[50],
               ),
               _crearTipoEmpresa(),
-              _crearActualizarT(),
+              _crearActualizar(),
               Divider(
                 color: Colors.indigo[50],
               ),
               _crearNoE(),
-              _crearActualizarN(),
+              _crearActualizar(),
               Divider(
                 color: Colors.indigo[50],
               ),
@@ -94,6 +94,7 @@ class _PersonalState extends State<Empresa> {
           new SizedBox(
             width: 150.0,
             height: 38.0,
+            // ignore: deprecated_member_use
             child: RaisedButton(
               color: Colors.indigo,
               textColor: Colors.white,
@@ -103,7 +104,50 @@ class _PersonalState extends State<Empresa> {
                   fontSize: 17.0,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () => showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  content: SingleChildScrollView(
+                    child: ListBody(
+                      children: <Widget>[
+                        Image.asset(
+                          'assets/img/aceptado.png',
+                          height: 130,
+                          width: 50,
+                        ),
+                        Text(
+                          'Actualizacion de Datos se ha hecho correctamente',
+                          style: TextStyle(color: Colors.black, fontSize: 22),
+                        ),
+                        Text(
+                          'Se cargue la pagina para observar los cambios',
+                          style: TextStyle(color: Colors.grey, fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ),
+                  actions: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(80, 0, 80, 0),
+                      // ignore: deprecated_member_use
+                      child: RaisedButton(
+                        color: Colors.indigo,
+                        textColor: Colors.white,
+                        padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+                        child: Text(
+                          'OK',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('personal');
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ],
@@ -191,32 +235,6 @@ class _PersonalState extends State<Empresa> {
     );
   }
 
-  Widget _crearActualizarD() {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(180, 0, 30, 10),
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          new SizedBox(
-            width: 150.0,
-            height: 38.0,
-            child: RaisedButton(
-              color: Colors.indigo,
-              textColor: Colors.white,
-              child: Text(
-                'Actualizar',
-                style: TextStyle(
-                  fontSize: 17.0,
-                ),
-              ),
-              onPressed: () {},
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   SingingCharac? _charac = SingingCharac.emprendedor;
   Widget _crearTipoEmpresa() {
     return Container(
@@ -275,32 +293,6 @@ class _PersonalState extends State<Empresa> {
     );
   }
 
-  Widget _crearActualizarT() {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(180, 0, 30, 10),
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          new SizedBox(
-            width: 150.0,
-            height: 38.0,
-            child: RaisedButton(
-              color: Colors.indigo,
-              textColor: Colors.white,
-              child: Text(
-                'Actualizar',
-                style: TextStyle(
-                  fontSize: 17.0,
-                ),
-              ),
-              onPressed: () {},
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _crearNoE() {
     return Container(
       color: Colors.white,
@@ -332,32 +324,6 @@ class _PersonalState extends State<Empresa> {
                 ),
               },
               hint: Text(_vis),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _crearActualizarN() {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(180, 0, 30, 10),
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          new SizedBox(
-            width: 150.0,
-            height: 38.0,
-            child: RaisedButton(
-              color: Colors.indigo,
-              textColor: Colors.white,
-              child: Text(
-                'Actualizar',
-                style: TextStyle(
-                  fontSize: 17.0,
-                ),
-              ),
-              onPressed: () {},
             ),
           ),
         ],

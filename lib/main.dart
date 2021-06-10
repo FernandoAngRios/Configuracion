@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      initialRoute: 'personal ',
+      initialRoute: 'personal',
       color: Colors.blue,
       routes: {
         'personal': (context) => Personal(),

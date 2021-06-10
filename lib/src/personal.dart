@@ -40,17 +40,17 @@ class _PersonalState extends State<Personal> {
                 color: Colors.indigo.shade50,
               ),
               _crearSexo(),
-              _crearActualizarS(),
+              _crearActualizar(),
               Divider(
                 color: Colors.indigo[50],
               ),
               _crearFecha(),
-              _crearActualizarF(),
+              _crearActualizar(),
               Divider(
                 color: Colors.indigo[50],
               ),
               _crearCorreo(),
-              _crearActualizarC(),
+              _crearActualizar(),
               Divider(
                 thickness: 3,
                 color: Colors.red,
@@ -137,6 +137,7 @@ class _PersonalState extends State<Personal> {
           new SizedBox(
             width: 150.0,
             height: 38.0,
+            // ignore: deprecated_member_use
             child: RaisedButton(
               color: Colors.indigo,
               textColor: Colors.white,
@@ -146,7 +147,50 @@ class _PersonalState extends State<Personal> {
                   fontSize: 17.0,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () => showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  content: SingleChildScrollView(
+                    child: ListBody(
+                      children: <Widget>[
+                        Image.asset(
+                          'assets/img/aceptado.png',
+                          height: 130,
+                          width: 50,
+                        ),
+                        Text(
+                          'Actualizacion de Datos se ha hecho correctamente',
+                          style: TextStyle(color: Colors.black, fontSize: 22),
+                        ),
+                        Text(
+                          'Se cargue la pagina para observar los cambios',
+                          style: TextStyle(color: Colors.grey, fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ),
+                  actions: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(80, 0, 80, 0),
+                      // ignore: deprecated_member_use
+                      child: RaisedButton(
+                        color: Colors.indigo,
+                        textColor: Colors.white,
+                        padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+                        child: Text(
+                          'OK',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('personal');
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ],
@@ -215,32 +259,6 @@ class _PersonalState extends State<Personal> {
       );
   }
 
-  Widget _crearActualizarS() {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(180, 0, 30, 10),
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          new SizedBox(
-            width: 150.0,
-            height: 38.0,
-            child: RaisedButton(
-              color: Colors.indigo,
-              textColor: Colors.white,
-              child: Text(
-                'Actualizar',
-                style: TextStyle(
-                  fontSize: 17.0,
-                ),
-              ),
-              onPressed: () {},
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _crearFecha() {
     return Container(
       color: Colors.white,
@@ -284,32 +302,6 @@ class _PersonalState extends State<Personal> {
     );
   }
 
-  Widget _crearActualizarF() {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(180, 0, 30, 10),
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          new SizedBox(
-            width: 150.0,
-            height: 38.0,
-            child: RaisedButton(
-              color: Colors.indigo,
-              textColor: Colors.white,
-              child: Text(
-                'Actualizar',
-                style: TextStyle(
-                  fontSize: 17.0,
-                ),
-              ),
-              onPressed: () {},
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _crearCorreo() {
     return Container(
       padding: const EdgeInsets.fromLTRB(30, 0, 30, 20),
@@ -325,32 +317,6 @@ class _PersonalState extends State<Personal> {
           ),
           TextFormField(
             decoration: InputDecoration(labelText: 'prueba@gmail.com'),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _crearActualizarC() {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(180, 0, 30, 10),
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          new SizedBox(
-            width: 150.0,
-            height: 38.0,
-            child: RaisedButton(
-              color: Colors.indigo,
-              textColor: Colors.white,
-              child: Text(
-                'Actualizar',
-                style: TextStyle(
-                  fontSize: 17.0,
-                ),
-              ),
-              onPressed: () {},
-            ),
           ),
         ],
       ),
@@ -403,13 +369,14 @@ class _PersonalState extends State<Personal> {
 
   Widget _crearActualizarP() {
     return Container(
-      padding: const EdgeInsets.fromLTRB(140, 0, 30, 10),
+      padding: const EdgeInsets.fromLTRB(85, 0, 85, 10),
       color: Colors.white,
       child: Column(
         children: <Widget>[
           new SizedBox(
             width: 200.0,
             height: 38.0,
+            // ignore: deprecated_member_use
             child: RaisedButton(
               color: Colors.redAccent[700],
               textColor: Colors.white,
@@ -419,7 +386,50 @@ class _PersonalState extends State<Personal> {
                   fontSize: 17.0,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () => showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  content: SingleChildScrollView(
+                    child: ListBody(
+                      children: <Widget>[
+                        Image.asset(
+                          'assets/img/aceptado.png',
+                          height: 130,
+                          width: 50,
+                        ),
+                        Text(
+                          'Actualizacion de Datos se ha hecho correctamente',
+                          style: TextStyle(color: Colors.black, fontSize: 22),
+                        ),
+                        Text(
+                          'Se cargue la pagina para observar los cambios',
+                          style: TextStyle(color: Colors.grey, fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  ),
+                  actions: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(80, 0, 80, 0),
+                      // ignore: deprecated_member_use
+                      child: RaisedButton(
+                        color: Colors.indigo,
+                        textColor: Colors.white,
+                        padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+                        child: Text(
+                          'OK',
+                          style: TextStyle(
+                            fontSize: 16.0,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('personal');
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
         ],
